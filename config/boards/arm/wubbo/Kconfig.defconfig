@@ -12,7 +12,7 @@ config ZMK_SPLIT
 	default y
 
 config ZMK_KEYBOARD_NAME
-	default "wubbo"
+	default "Wubbo"
 
 if USB
 

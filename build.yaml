@@ -10,5 +10,4 @@
 include:
    - board: wubbo_left
    - board: wubbo_right
-   - board: wubbo_left
-     shield: settings_reset
+   - board: wubbo_reset
