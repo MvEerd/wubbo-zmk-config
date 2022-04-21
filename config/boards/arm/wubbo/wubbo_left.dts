@@ -36,6 +36,13 @@
 		full-ohms = <(2000000 + 820000)>;
 	};
 
+	ext-power {
+		compatible = "zmk,ext-power-generic";
+		label = "EXT_POWER";
+		control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
+		init-delay-ms = <50>;
+	};
+
 #define K(n) RC(0,n)
 	transform: transform {
 		compatible = "zmk,matrix-transform";
