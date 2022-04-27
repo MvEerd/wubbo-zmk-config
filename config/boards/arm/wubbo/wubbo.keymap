@@ -84,7 +84,7 @@
 			bindings = <
                      &kp AMPS   &kp ASTRK   &kp LPAR    &kp GRAVE                             &kp GRAVE   &kp LPAR     &kp RPAR     &none        
 &sl 3       &none    &kp DLLR   &kp PRCNT   &kp CARET   &kp SQT                               &none       &kp LBRC     &kp RBRC     &kp LBKT    &kp RBKT    &none 
-            &none    &kp EXCL   &kp AT      &kp HASH    &kp DQT                               &kp BSLH    &kp PIPE     &kp Po;l;llLUS     &kp EQUAL   &none
+            &none    &kp EXCL   &kp AT      &kp HASH    &kp DQT                               &kp BSLH    &kp PIPE     &kp PLUS     &kp EQUAL   &none
 						                                &none      &none           &kp MINUS  &kp UNDER
 			>;
        	};
