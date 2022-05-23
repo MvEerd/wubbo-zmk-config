@@ -68,6 +68,7 @@
         COMBO(left_esc, &kp ESC, 15 16, BASE_L NUMNAV_L)
 	COMBO(dmenu, &kp LG(D), 31 32, BASE_L NUMNAV_L SYM_L)
 	COMBO(ptt, &kp F24, 12 31, BASE_L NUMNAV_L SYM_L)
+	COMBO(quit, &kp LG(LS(Q)), 0 31, BASE_L NUMNAV_L SYM_L)
     };
 
     keymap {
