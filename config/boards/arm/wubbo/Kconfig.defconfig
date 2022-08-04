@@ -21,11 +21,11 @@ config USB_NRFX
 
 config USB_DEVICE_STACK
 	default y
-	
-config ZMK_USB_LOGGING
-	default y
 
 endif # USB
+
+config ZMK_USB_LOGGING
+	default y
 
 config BT_CTLR
 	default BT
