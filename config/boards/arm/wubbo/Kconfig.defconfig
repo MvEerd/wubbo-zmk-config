@@ -24,9 +24,6 @@ config USB_DEVICE_STACK
 
 endif # USB
 
-config ZMK_USB_LOGGING
-	default y
-
 config BT_CTLR
 	default BT
 
