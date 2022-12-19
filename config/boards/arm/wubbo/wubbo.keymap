@@ -14,10 +14,13 @@
 #define BT3 &bt BT_SEL 3
 #define BT4 &bt BT_SEL 4
 
-#define BASE_L 0
-#define SYM_L 1
-#define NUMNAV_L 2
-#define EXTRA_L 3
+#define BASE 0
+#define COLE 1
+#define SYM 2
+#define NUM 3
+#define EXT 4
+
+#define EUR RA(N5)
 
 &sl {
   release-after-ms = <60000>;
@@ -65,11 +68,13 @@
                             ╰─────────╯ ╰────────╯           
         */
 
-        COMBO(left_esc, &kp ESC, 1 2, BASE_L NUMNAV_L)
-	COMBO(dmenu, &kp LG(D), 31 32, BASE_L NUMNAV_L SYM_L)
-	COMBO(ptt, &kp F24, 12 31, BASE_L NUMNAV_L SYM_L)
-	COMBO(quit, &kp LG(LS(Q)), 0 31, BASE_L NUMNAV_L SYM_L)
-	COMBO(extra_layer, &mo EXTRA_L, 30 31, BASE_L NUMNAV_L SYM_L)
+        COMBO(left_esc, &kp ESC, 1 2, BASE NUM COLE)
+	      COMBO(dmenu, &kp LG(D), 31 32, BASE NUM SYM COLE)
+	      COMBO(ptt, &kp F24, 12 31, BASE NUM SYM COLE)
+	      COMBO(quit, &kp LG(LS(Q)), 0 31, BASE NUM SYM COLE)
+      	COMBO(extra_layer, &mo EXT, 30 31, BASE NUM SYM COLE)
+        COMBO(qwerty_layer, &tog BASE, 0 1 2, BASE NUM SYM COLE)
+        COMBO(colemak_layer, &tog COLE, 4 5 6, BASE NUM SYM COLE)
     };
 
     keymap {
@@ -77,37 +82,49 @@
 
 		base_layer {
 			bindings = <
-                     &kp W      &kp E       &kp R        &kp T                                 &kp Y         &kp U        &kp I        &kp O       
-&kp Q     &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F  &kp G                                 &kp H         &hm RSHFT J  &hm RCTRL K  &hm RALT L  &lt 2 SEMI &hm RGUI P
-          &kp Z      &kp X      &kp C       &kp V        &kp B                                 &kp N         &kp M        &kp COMMA    &kp DOT     &kp FSLH
-						         &kp SPACE &lt 1 BSPC   &mt RSHFT TAB  &kp RET
+                       &kp W      &kp E       &kp R        &kp T                                  &kp Y         &kp U        &kp I        &kp O       
+&kp Q      &hm LGUI A  &hm LALT S &hm LCTRL D &hm LSHFT F  &kp G                                  &kp H         &hm RSHFT J  &hm RCTRL K  &hm RALT L  &lt NUM SEMI &hm RGUI P
+           &kp Z       &kp X      &kp C       &kp V        &kp B                                  &kp N         &kp M        &kp COMMA    &kp DOT     &kp FSLH
+						                                               &kp SPACE &lt SYM BSPC  &mt RSHFT TAB  &kp RET
 			>;
        	};
 
+
+		cole_layer {
+			bindings = <
+                      &kp W      &kp F       &kp P        &kp B                                  &kp J         &kp L        &kp U        &kp Y       
+&kp Q     &hm LGUI A  &hm LALT R &hm LCTRL S &hm LSHFT T  &kp G                                  &kp M         &hm RSHFT N  &hm RCTRL E  &hm RALT I  &lt NUM O     &hm RGUI SEMI
+          &kp Z       &kp X      &kp C       &kp D        &kp V                                  &kp K         &kp H        &kp COMMA    &kp DOT     &kp FSLH
+ 						                                              &kp SPACE &lt SYM BSPC  &mt RSHFT TAB  &kp RET
+			>;
+       	};
+
+    
+
 		symbol_layer {
 			bindings = <
-                     &kp AMPS   &kp ASTRK   &kp LPAR    &kp GRAVE                             &kp GRAVE   &kp LPAR     &kp RPAR     &none        
-&sl 3    &kp RA(N5)  &kp DLLR   &kp PRCNT   &kp CARET   &kp SQT                               &none       &kp LBRC     &kp RBRC     &kp LBKT    &kp RBKT    &none 
-            &none    &kp EXCL   &kp AT      &kp HASH    &kp DQT                               &kp BSLH    &kp PIPE     &kp PLUS     &kp EQUAL   &none
-						        &none      &none           &kp MINUS  &kp UNDER
+                      &kp AMPS   &kp ASTRK   &kp LPAR    &kp GRAVE                              &kp GRAVE   &kp LPAR     &kp RPAR     &none        
+&sl EXT       &kp EUR   &kp DLLR   &kp PRCNT   &kp CARET   &kp SQT                              &none       &kp LBRC     &kp RBRC     &kp LBKT    &kp RBKT    &none 
+            &none     &kp EXCL   &kp AT      &kp HASH    &kp DQT                                &kp BSLH    &kp PIPE     &kp PLUS     &kp EQUAL   &none
+						                                             &none      &none            &kp MINUS  &kp UNDER
 			>;
        	};
 
 		numnav_layer {
 			bindings = <
-                     &kp N7     &kp N8      &kp N9      &none                               &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &trans       
-&none       &none    &kp N4     &kp N5      &kp N6      &none                               &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT   &trans      &trans
-            &none    &kp N1     &kp N2      &kp N3      &none                               &kp HOME     &kp PG_DN    &kp PG_UP    &kp END     &trans
-						        &kp DOT     &kp N0         &none    &kp ESC
+                      &kp N7     &kp N8      &kp N9      &none                                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &trans       
+&none        &none    &kp N4     &kp N5      &kp N6      &none                                &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT   &trans      &trans
+             &none    &kp N1     &kp N2      &kp N3      &none                                &kp HOME     &kp PG_DN    &kp PG_UP    &kp END     &trans
+						                                             &kp DOT     &kp N0          &none    &kp ESC
 			>;
        	};
 
 		extra_layer {
 			bindings = <
-                     &kp F7     &kp F8      &kp F9      &kp F10                              &none        &none        &none        &none        
-&none       &none    &kp F4     &kp F5      &kp F6      &kp F11                              BT0          BT1          BT2          BT3         BT4         &bt BT_CLR
-            &none    &kp F1     &kp F2      &kp F3      &kp F12                              &none        &none        &none        &none       &none 
-						        &none       &none           &trans   &none
+                      &kp F7     &kp F8      &kp F9      &kp F10                               &none        &none        &none        &none        
+&none        &none    &kp F4     &kp F5      &kp F6      &kp F11                               BT0          BT1          BT2          BT3         BT4         &bt BT_CLR
+             &none    &kp F1     &kp F2      &kp F3      &kp F12                               &none        &none        &none        &none       &none 
+						                                             &none       &none           &trans    &none
 			>;
        	};
     };
