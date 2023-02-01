@@ -32,3 +32,56 @@ config ZMK_BLE
 
 config ZMK_USB
 	default y
+	
+# Enable deep sleep support (default n)
+config ZMK_SLEEP
+	default y
+	
+# Milliseconds of inactivity before entering deep sleep (default 900000)
+config ZMK_IDLE_SLEEP_TIMEOUT
+	default 2400000 # in ms
+
+# Increase the bluetooth transmission power
+config BT_CTLR_TX_PWR_PLUS_8
+	default y
+
+# Adjust the 32KHz clock accuracy to fix 0x08 timeout disconnect issues
+config CLOCK_CONTROL_NRF_K32SRC_RC
+	default y
+config CLOCK_CONTROL_NRF_K32SRC_250PPM
+	default y
+
+config SOC_SERIES_NRF52X
+	default y
+
+config SOC_NRF52840_QIAA
+	default y
+
+config USE_DT_CODE_PARTITION
+	default y
+
+config BUILD_OUTPUT_UF2
+	default y
+
+# Enable MPU
+config ARM_MPU
+	default y
+# Enable GPIO
+config GPIO
+	default y
+config MPU_ALLOW_FLASH_WRITE
+	default y
+config NVS
+	default y
+config SETTINGS_NVS
+	default y
+config FLASH
+	default y
+config FLASH_PAGE_LAYOUT
+	default y
+config FLASH_MAP
+	default y
+
+# Enable logging over USB (default n)
+# config ZMK_USB_LOGGING
+#	default y
