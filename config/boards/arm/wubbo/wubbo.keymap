@@ -75,6 +75,7 @@
       	COMBO(extra_layer, &mo EXT, 30 31, BASE NUM SYM COLE)
         COMBO(qwerty_layer, &tog BASE, 0 1 2, BASE NUM SYM COLE)
         COMBO(colemak_layer, &tog COLE, 4 5 6, BASE NUM SYM COLE)
+	COMBO(studio_unlock, &studio_unlock, 3 31, BASE NUM SYM COLE)
     };
 
     keymap {
