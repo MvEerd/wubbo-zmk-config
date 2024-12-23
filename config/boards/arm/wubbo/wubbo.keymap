@@ -76,7 +76,7 @@
         COMBO(qwerty_layer, &tog BASE, 0 1 2)
         COMBO(colemak_layer, &tog COLE, 4 5 6)
 	COMBO(studio_unlock, &studio_unlock, 3 31)
-	COMBO(mmo_layer, &tog MMO, 26, 27, 28, 29)
+	COMBO(mmo_layer, &tog MMO, 26 27 28 29)
     };
 
     keymap {
