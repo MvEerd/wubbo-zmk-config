@@ -1,6 +1,61 @@
 / {
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
+    };
+};
+
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
         display-name = "Wubbo Layout";
+        transform = <&transform>;
+
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0  176  (-500)    50   226>
+            , <&key_physical_attrs 100 100  199   12  (-300)   249    62>
+            , <&key_physical_attrs 100 100  318    0       0     0     0>
+            , <&key_physical_attrs 100 100  423   18     100   473    68>
+            , <&key_physical_attrs 100 100  527   49     200   577    99>
+            , <&key_physical_attrs 100 100  100  167  (-500)   150   217>
+            , <&key_physical_attrs 100 100  204  112  (-300)   254   162>
+            , <&key_physical_attrs 100 100  318  100       0     0     0>
+            , <&key_physical_attrs 100 100  421  118     100   471   168>
+            , <&key_physical_attrs 100 100  523  149     200   573   199>
+            , <&key_physical_attrs 100 100  108  266  (-500)   158   316>
+            , <&key_physical_attrs 100 100  209  212  (-300)   259   262>
+            , <&key_physical_attrs 100 100  318  200       0     0     0>
+            , <&key_physical_attrs 100 100  419  218     100   469   268>
+            , <&key_physical_attrs 100 100  520  249     200   570   299>
+            , <&key_physical_attrs 100 100  474  361    1100   524   411>
+            , <&key_physical_attrs 100 100  596  376    2600   646   426>
+            , <&key_physical_attrs 100 100 1592  176     500  1642   226>
+            , <&key_physical_attrs 100 100 1394   12     300  1444    62>
+            , <&key_physical_attrs 100 100 1274    0       0     0     0>
+            , <&key_physical_attrs 100 100 1170   18  (-100)  1220    68>
+            , <&key_physical_attrs 100 100 1066   49  (-200)  1116    99>
+            , <&key_physical_attrs 100 100 1493  167     500  1543   217>
+            , <&key_physical_attrs 100 100 1388  112     300  1438   162>
+            , <&key_physical_attrs 100 100 1274  100       0     0     0>
+            , <&key_physical_attrs 100 100 1171  118  (-100)  1221   168>
+            , <&key_physical_attrs 100 100 1069  149  (-200)  1119   199>
+            , <&key_physical_attrs 100 100 1484  266     500  1534   316>
+            , <&key_physical_attrs 100 100 1384  212     300  1434   262>
+            , <&key_physical_attrs 100 100 1274  200       0     0     0>
+            , <&key_physical_attrs 100 100 1173  218  (-100)  1223   268>
+            , <&key_physical_attrs 100 100 1072  249  (-200)  1122   299>
+            , <&key_physical_attrs 100 100 1118  361 (-1100)  1168   411>
+            , <&key_physical_attrs 100 100  996  376 (-2600)  1046   426>
+            ;
+    };
+
+    position_map {
+        compatible = "zmk,physical-layout-position-map";
+
+        complete;
+
+        physical_layout0 {
+            physical-layout = <&physical_layout0>;
+            positions = <>;
+        };
     };
 };
