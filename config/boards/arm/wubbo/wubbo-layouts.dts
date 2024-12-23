@@ -5,6 +5,7 @@
         compatible = "zmk,physical-layout";
         display-name = "Wubbo Layout";
         transform = <&transform>;
+        kscan = <&kscan>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0  176  (-500)    50   226>
