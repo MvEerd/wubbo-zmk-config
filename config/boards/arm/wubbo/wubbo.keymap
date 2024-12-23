@@ -70,7 +70,7 @@
 
         COMBO(left_esc, &kp ESC, 1 2)
 	COMBO(dmenu, &kp LG(D), 31 32)
-	COMBO(ptt, &kp F24, 12 3)
+	COMBO(ptt, &kp F24, 12 31)
 	COMBO(quit, &kp LG(LS(Q)), 0 31)
       	COMBO(extra_layer, &mo EXT, 30 31)
         COMBO(qwerty_layer, &tog BASE, 0 1 2)
