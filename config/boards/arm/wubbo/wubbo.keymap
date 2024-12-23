@@ -19,6 +19,7 @@
 #define SYM 2
 #define NUM 3
 #define EXT 4
+#define MMO 5
 
 #define EUR RA(N5)
 
@@ -52,11 +53,10 @@
         combos {
         compatible = "zmk,combos";
 
-        #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+        #define COMBO(NAME, BINDINGS, KEYPOS) \
           combo_##NAME { \
             bindings = <BINDINGS>; \
             key-positions = <KEYPOS>; \
-            layers = <LAYERS>; \
           };
 
         /* 
@@ -68,14 +68,15 @@
                             ╰─────────╯ ╰────────╯           
         */
 
-        COMBO(left_esc, &kp ESC, 1 2, BASE NUM COLE)
-	COMBO(dmenu, &kp LG(D), 31 32, BASE NUM SYM COLE)
-	COMBO(ptt, &kp F24, 12 31, BASE NUM SYM COLE)
-	COMBO(quit, &kp LG(LS(Q)), 0 31, BASE NUM SYM COLE)
-      	COMBO(extra_layer, &mo EXT, 30 31, BASE NUM SYM COLE)
-        COMBO(qwerty_layer, &tog BASE, 0 1 2, BASE NUM SYM COLE)
-        COMBO(colemak_layer, &tog COLE, 4 5 6, BASE NUM SYM COLE)
-	COMBO(studio_unlock, &studio_unlock, 3 31, BASE NUM SYM COLE)
+        COMBO(left_esc, &kp ESC, 1 2)
+	COMBO(dmenu, &kp LG(D), 31 32)
+	COMBO(ptt, &kp F24, 12 3)
+	COMBO(quit, &kp LG(LS(Q)), 0 31)
+      	COMBO(extra_layer, &mo EXT, 30 31)
+        COMBO(qwerty_layer, &tog BASE, 0 1 2)
+        COMBO(colemak_layer, &tog COLE, 4 5 6)
+	COMBO(studio_unlock, &studio_unlock)
+	COMBO(mmo_layer, &tog MMO, 26, 27, 28, 29)
     };
 
     keymap {
@@ -87,7 +88,7 @@
                        &kp W      &kp E       &kp R        &kp T                                  &kp Y         &kp U        &kp I        &kp O       
 &kp Q      &hm LGUI A  &hm LALT S &hm LCTRL D &hm LSHFT F  &kp G                                  &kp H         &hm RSHFT J  &hm RCTRL K  &hm RALT L  &lt NUM SEMI &hm RGUI P
            &kp Z       &kp X      &kp C       &kp V        &kp B                                  &kp N         &kp M        &kp COMMA    &kp DOT     &kp FSLH
-				                    &kp SPACE    &lt SYM BSPC            &mt RSHFT TAB  &kp RET
+				              &kp SPACE    &lt SYM BSPC                           &mt RSHFT TAB &kp RET
 		>;
        	};
 
@@ -98,7 +99,7 @@
                       &kp W      &kp F       &kp P        &kp B                               &kp J         &kp L        &kp U        &kp Y       
 &kp Q     &hm LGUI A  &hm LALT R &hm LCTRL S &hm LSHFT T  &kp G                               &kp M         &hm RSHFT N  &hm RCTRL E  &hm RALT I  &lt NUM O     &hm RGUI SEMI
           &kp Z       &kp X      &kp C       &kp D        &kp V                               &kp K         &kp H        &kp COMMA    &kp DOT     &kp FSLH
- 						 &kp SPACE &lt SYM BSPC                       &mt RSHFT TAB  &kp RET
+ 				             &kp SPACE    &lt SYM BSPC                        &mt RSHFT TAB &kp RET
 		>;
        	};
 
@@ -110,7 +111,7 @@
                       &kp AMPS   &kp ASTRK   &kp LPAR    &kp GRAVE                            &kp GRAVE   &kp LPAR     &kp RPAR     &none        
 &sl EXT     &kp EUR   &kp DLLR   &kp PRCNT   &kp CARET   &kp SQT                              &none       &kp LBRC     &kp RBRC     &kp LBKT    &kp RBKT    &none 
             &none     &kp EXCL   &kp AT      &kp HASH    &kp DQT                              &kp BSLH    &kp PIPE     &kp PLUS     &kp EQUAL   &none
-						         &none      &none                     &kp MINUS  &kp UNDER
+					     &none       &none                                &kp MINUS   &kp UNDER
 		>;
        	};
 
