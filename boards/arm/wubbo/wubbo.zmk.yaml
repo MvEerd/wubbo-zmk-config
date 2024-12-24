@@ -1,0 +1,17 @@
+file_format: 1
+id: wubbo
+name: Wubbo
+version: 0.3
+type: board
+arch: arm
+url: https://github.com/cacheworks/Wubbo
+manufacturer: cache.works
+features:
+  - keys
+  - studio
+outputs:
+  - usb
+  - ble
+siblings:
+  - wubbo_left
+  - wubbo_right
