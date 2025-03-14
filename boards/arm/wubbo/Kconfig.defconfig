@@ -31,13 +31,3 @@ config BT_CTLR
 
 config ZMK_BLE
 	default y
-
-
-if BOARD_WUBBO_RESET
-
-config ZMK_SETTINGS_RESET_ON_START
-	default y
-config ZMK_BLE
-	default n
-
-endif # Wubbo reset
