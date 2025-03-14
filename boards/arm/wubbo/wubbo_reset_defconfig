@@ -1,4 +1,4 @@
-e# Adjust the 32KHz clock accuracy to fix 0x08 timeout disconnect issues
+# Adjust the 32KHz clock accuracy to fix 0x08 timeout disconnect issues
 CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
 CONFIG_CLOCK_CONTROL_NRF_K32SRC_250PPM=y
 
