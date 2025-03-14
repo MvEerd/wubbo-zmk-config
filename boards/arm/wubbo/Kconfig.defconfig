@@ -37,7 +37,7 @@ if BOARD_WUBBO_RESET
 
 config ZMK_SETTINGS_RESET_ON_START
 	default y
-confit ZMK_BLE
+config ZMK_BLE
 	default n
 
 endif # Wubbo reset
