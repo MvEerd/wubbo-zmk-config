@@ -13,4 +13,4 @@ include:
      cmake-args: -DCONFIG_ZMK_STUDIO=y
    - board: wubbo_right
    - board: wubbo_reset
-     shield: settings_reset
+     cmake-args: -DSHIELD=settings_reset
