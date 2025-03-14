@@ -1,4 +1,4 @@
-# This file generates the GitHub Actions matrix
+d# This file generates the GitHub Actions matrix
 # For simple board + shield combinations, add them
 # to the top level board and shield arrays, for more
 # control, add individual board + shield combinations to
@@ -12,5 +12,5 @@ include:
      snippet: studio-rpc-usb-uart
      cmake-args: -DCONFIG_ZMK_STUDIO=y
    - board: wubbo_right
-   - board: wubbo_reset
-     cmake-args: -DSHIELD=settings_reset
+   - board: wubbo_left
+     shield: settings_reset
