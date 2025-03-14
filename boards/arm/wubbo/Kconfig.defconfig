@@ -5,7 +5,6 @@ if BOARD_WUBBO_LEFT
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
-
 config ZMK_USB
 	default y
 
@@ -33,3 +32,12 @@ config BT_CTLR
 config ZMK_BLE
 	default y
 
+
+if BOARD_WUBBO_RESET
+
+config ZMK_SETTINGS_RESET_ON_START
+	default y
+confit ZMK_BLE
+	default n
+
+endif # Wubbo reset
